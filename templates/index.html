@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Review Sentiment Analysis</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 0;">
+
+    <header style="background-color: #333; color: #fff; text-align: center; padding: 1rem 0;">
+        <h1>Restaurant Review Sentiment Analysis</h1>
+    </header>
+
+    <main style="max-width: 800px; margin: 0 auto; padding: 20px;">
+
+        <section id="sentiment-result" style="margin-top: 20px;">
+            <h2>Sentiment Analysis Result</h2>
+            <div id="sentiment-text"></div>
+        </section>
+
+        <section id="review-form" style="background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+            <h2>Submit a Review</h2>
+            <form id="review-submit-form" action="{{ url_for('predict')}}" method="post">
+                <label for="review" style="display: block; margin-bottom: 10px; font-weight: bold;name=review">Enter your restaurant review:</label>
+                <textarea id="review" name="Review" rows="4" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                <button type="submit" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Analyze Sentiment</button>
+            </form>
+            <div class="predict">
+              {{ prediction_text }}
+            </div>
+          </div>
+        </section>
+
+    </main>
+
+    <footer style="text-align: center; background-color: #333; color: #fff; padding: 10px 0; position: absolute; bottom: 0; width: 100%;">
+        <p>&copy; 2023 Restaurant Review Sentiment Analysis</p>
+    </footer>
+
+</body>
+</html>
+
